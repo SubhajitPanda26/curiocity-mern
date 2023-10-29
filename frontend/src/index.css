@@ -2,14 +2,64 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=League+Spartan:wght@200;400;500;600;700&family=Sancreek&display=swap");
 
 body {
+  margin: 0;
+  padding: 0;
   font-family: "Lato";
 }
 
+h1 {
+  font-family: "Sancreek";
+  font-weight: 500;
+}
+
+a {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.708);
+}
+
+button {
+  background-color: #a07a60;
+  color: #ffffff;
+  white-space: nowrap;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  padding: 10px 20px;
+}
+
+button:hover {
+  background-color: #775a46;
+}
+
+/* BOOTSTRAP BUTTONS */
+.btn-outline-warning {
+  margin-top: 1rem;
+  font-family: "Sancreek";
+  font-size: 1.3rem;
+  color: white;
+  background: none;
+  border-color: white;
+  border-radius: 0%;
+}
+
+.btn-outline-warning:hover {
+  background: #775a46;
+  color: white;
+  border-color: white;
+}
+
+.btn-dark {
+  border-radius: 0px;
+}
+
+/* RATING  */
 .rating span {
   margin: 0.1rem;
 }
 
 .rating svg {
+  font-size: 1.3rem;
   color: #ffa41c;
 }
 
@@ -19,6 +69,7 @@ body {
   padding-left: 0.5rem;
 }
 
+/* CARD SECTION */
 .product-title {
   height: 2.5em;
   overflow: hidden;
@@ -29,6 +80,94 @@ body {
 .product-title:hover {
   white-space: normal;
   overflow: visible;
+}
+
+/* BANNER SECTION */
+.banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.9)
+    ),
+    url("./assets/banner/ban2.jpg");
+  width: 100%;
+  height: 40vh;
+  background-size: cover;
+  background-position: center;
+}
+
+.banner > h2 {
+  font-family: "Sancreek";
+  font-size: 4rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.83);
+}
+
+.banner > h4 {
+  color: rgba(255, 255, 255, 0.586);
+}
+
+/* NEWSLETTER SECTION */
+.newsletter {
+  height: 25vh;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  background-image: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.9)
+    ),
+    url("./assets/banner/ban2.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.newsletter h4 {
+  font-family: "Sancreek";
+  font-size: 2.5rem;
+  letter-spacing: 1.5px;
+  color: rgba(255, 255, 255, 0.83);
+}
+
+.newsletter p {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.586);
+}
+
+.newsletter .form {
+  display: flex;
+  width: 35%;
+}
+
+.newsletter input {
+  height: 3.225rem;
+  padding: 0 1.25em;
+  font-size: 14px;
+  width: 65%;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  outline: none;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.newsletter button {
+  width: 35%;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  padding: 15px 30px;
+}
+
+/* FOOTER */
+.follow svg {
+  font-size: 1.3rem;
 }
 
 /* body {

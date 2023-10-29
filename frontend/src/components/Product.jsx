@@ -20,7 +20,9 @@ const Product = ({ product }) => {
             text={`${product.numReviews} reviews`}
           />
         </Card.Text>
-        <Card.Text as="div">₹{product.price} </Card.Text>
+        <Card.Text as="div" className="fs-4 fw-bold">
+          ₹{product.price}{" "}
+        </Card.Text>
       </Card.Body>
     </Card>
   );
