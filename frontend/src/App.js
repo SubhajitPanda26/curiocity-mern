@@ -8,9 +8,9 @@ const App = () => {
     <>
       <ScrollToTop />
       <Header />
-      <main className="py-4">
-        <Outlet />
-      </main>
+      {/* <main className="py-4"> */}
+      <Outlet />
+      {/* </main> */}
       <Footer />
     </>
   );

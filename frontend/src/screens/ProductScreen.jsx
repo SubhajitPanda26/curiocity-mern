@@ -1,15 +1,6 @@
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
-import {
-  Row,
-  Col,
-  Image,
-  ListGroup,
-  Card,
-  Button,
-  Container,
-  ListGroupItem,
-} from "react-bootstrap";
+import { Row, Col, Image, ListGroup, Button, Container } from "react-bootstrap";
 import Rating from "../components/Rating";
 import products from "../products";
 
@@ -20,7 +11,7 @@ const ProductScreen = () => {
   return (
     <Container>
       <Link to="/">
-        <button className="mb-3">Go Back</button>
+        <button className="my-3">Back</button>
       </Link>
       <Row>
         <Col md={5}>
@@ -46,38 +37,21 @@ const ProductScreen = () => {
               <ListGroup.Item>
                 <p>{product.description}</p>
               </ListGroup.Item>
+              <ListGroup.Item>
+                <p>
+                  {" "}
+                  Status:{" "}
+                  {product.countInStock > 0 ? "In Stock" : "Out of Stock"}{" "}
+                </p>
+                <Button
+                  className="btn-dark"
+                  type="button"
+                  disabled={product.countInStock === 0}
+                >
+                  Add To Cart
+                </Button>
+              </ListGroup.Item>
             </ListGroup>
-          </Row>
-          <Row>
-            <Card>
-              <ListGroup variant="flush">
-                <ListGroup.Item>
-                  <Row>
-                    <Col>Price:</Col>
-                    <Col>
-                      <strong>₹ {product.price}</strong>
-                    </Col>
-                  </Row>
-                </ListGroup.Item>
-                <ListGroup.Item>
-                  <Row>
-                    <Col>Status:</Col>
-                    <Col>
-                      {product.countInStock > 0 ? "In Stock" : "Out of Stock"}
-                    </Col>
-                  </Row>
-                </ListGroup.Item>
-                <ListGroup.Item>
-                  <Button
-                    className="btn-dark"
-                    type="button"
-                    disabled={product.countInStock === 0}
-                  >
-                    Add To Cart
-                  </Button>
-                </ListGroup.Item>
-              </ListGroup>
-            </Card>
           </Row>
         </Col>
       </Row>

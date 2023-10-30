@@ -12,6 +12,7 @@ const Header = () => {
         expand="md"
         collapseOnSelect
         className="custom-nav"
+        fixed="top"
       >
         <Container>
           <LinkContainer to="/">

@@ -2,12 +2,14 @@ import { Container } from "react-bootstrap";
 import { Row, Col } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Product from "../components/Product";
+import HeroSection from "../components/HeroSection";
 import products from "../products.js";
 
 const HomeScreen = () => {
   return (
     <>
-      <Container>
+      <HeroSection />
+      <Container className="mt-5">
         <h1 className="text-center">{`>>>> Featured Collections <<<<`}</h1>
         <Row>
           {products.map((product) => (

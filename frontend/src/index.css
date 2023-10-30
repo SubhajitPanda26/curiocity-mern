@@ -3,7 +3,7 @@
 
 body {
   margin: 0;
-  padding: 0;
+  padding: 5.3rem 0 0;
   font-family: "Lato";
 }
 
@@ -18,18 +18,23 @@ a {
 }
 
 button {
-  background-color: #a07a60;
-  color: #ffffff;
+  background: #ebefefa0;
+  border: 0 solid #e2e8f0;
+  box-shadow: 6px 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  color: #1a202c;
   white-space: nowrap;
   border-radius: 4px;
-  border: none;
   outline: none;
   font-size: 14px;
   padding: 10px 20px;
+  transition: all ease 0.3s;
 }
 
 button:hover {
-  background-color: #775a46;
+  /* box-shadow: 3px 3px 10px #000; */
+  box-shadow: 6px 4px 6px -1px rgba(0, 0, 0, 0.8),
+    0 2px 4px -1px rgba(0, 0, 0, 0.1);
 }
 
 /* BOOTSTRAP BUTTONS */
@@ -51,6 +56,23 @@ button:hover {
 
 .btn-dark {
   border-radius: 0px;
+}
+
+/* HEAD BANNER */
+.h-banner {
+  background-image: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.9)
+    ),
+    url("./assets/banner/ban2.jpg");
+  background-size: cover;
+  background-position: top 25% right 0;
+  color: rgba(255, 255, 255, 0.83);
+  text-align: center;
+  height: 20vh;
+  width: 100%;
+  padding: 0.6rem;
 }
 
 /* RATING  */
@@ -111,6 +133,40 @@ button:hover {
   color: rgba(255, 255, 255, 0.586);
 }
 
+/* HERO SECTION */
+.hero {
+  background-image: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 1)
+    ),
+    url("./assets/hero/hero.jpg");
+  color: #e2e8f0;
+  height: 85vh;
+  width: 100%;
+  background-size: cover;
+  background-position: top 25% right 0;
+  padding: 0 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.hero > * {
+  /* font-family: "Lato"; */
+  letter-spacing: 4px;
+}
+
+/* ABOUT HERO SECTION */
+.about-hero {
+  background-image: url("./assets/hero/hero2.jpg");
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 60vh;
+}
+
 /* NEWSLETTER SECTION */
 .newsletter {
   height: 25vh;
@@ -147,7 +203,7 @@ button:hover {
 }
 
 .newsletter input {
-  height: 3.225rem;
+  height: 3.325rem;
   padding: 0 1.25em;
   font-size: 14px;
   width: 65%;
@@ -159,10 +215,14 @@ button:hover {
 }
 
 .newsletter button {
+  font-family: "Sancreek";
+  font-size: 1.2rem;
+  background: #775a46;
+  color: #e2e8f0;
   width: 35%;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
-  padding: 15px 30px;
+  padding: 12px 25px;
 }
 
 /* FOOTER */
