@@ -27,7 +27,7 @@ const ContactScreen = () => {
             <Row>
               <p>
                 <RiMapPinLine className="me-3" />
-                86, Churchgate, Gill Stree, Ratlam, Kerala
+                86B, Churchgate, West Bengal
               </p>
               <p>
                 <RiMailLine className="me-3" />
@@ -46,13 +46,13 @@ const ContactScreen = () => {
           <Col md={7}>
             <iframe
               title="Google Map"
-              src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d8710.710166726174!2d76.77497248873787!3d9.367007300762054!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1695317651361!5m2!1sen!2sin"
+              src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d12396.451308472817!2d88.29477328311327!3d22.523421813342335!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1698760094129!5m2!1sen!2sin"
               width="100%"
               height="400"
               style={{ border: 0 }}
-              allowfullscreen=""
+              allowFullScreen=""
               loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
+              referrerPolicy="no-referrer-when-downgrade"
             ></iframe>
           </Col>
         </Row>

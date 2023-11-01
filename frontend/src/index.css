@@ -4,11 +4,11 @@
 body {
   margin: 0;
   padding: 5.3rem 0 0;
-  font-family: "Lato";
+  font-family: "Lato", sans-serif;
 }
 
 h1 {
-  font-family: "Sancreek";
+  font-family: "Sancreek", sans-serif;
   font-weight: 500;
 }
 
@@ -40,7 +40,7 @@ button:hover {
 /* BOOTSTRAP BUTTONS */
 .btn-outline-warning {
   margin-top: 1rem;
-  font-family: "Sancreek";
+  font-family: "Sancreek", sans-serif;
   font-size: 1.3rem;
   color: white;
   background: none;
@@ -56,6 +56,16 @@ button:hover {
 
 .btn-dark {
   border-radius: 0px;
+}
+
+/* CARD  */
+.hover-scale {
+  transform: scale(1);
+  transition: transform 0.3s;
+}
+
+.hover-scale:hover {
+  transform: scale(1.1);
 }
 
 /* HEAD BANNER */
@@ -99,11 +109,6 @@ button:hover {
   white-space: nowrap;
 }
 
-.product-title:hover {
-  white-space: normal;
-  overflow: visible;
-}
-
 /* BANNER SECTION */
 .banner {
   display: flex;
@@ -123,7 +128,7 @@ button:hover {
 }
 
 .banner > h2 {
-  font-family: "Sancreek";
+  font-family: "Sancreek", sans-serif;
   font-size: 4rem;
   font-weight: 400;
   color: rgba(255, 255, 255, 0.83);
@@ -154,7 +159,7 @@ button:hover {
 }
 
 .hero > * {
-  /* font-family: "Lato"; */
+  /* font-family: "Lato", sans-serif; */
   letter-spacing: 4px;
 }
 
@@ -186,7 +191,7 @@ button:hover {
 }
 
 .newsletter h4 {
-  font-family: "Sancreek";
+  font-family: "Sancreek", sans-serif;
   font-size: 2.5rem;
   letter-spacing: 1.5px;
   color: rgba(255, 255, 255, 0.83);
@@ -215,7 +220,7 @@ button:hover {
 }
 
 .newsletter button {
-  font-family: "Sancreek";
+  font-family: "Sancreek", sans-serif;
   font-size: 1.2rem;
   background: #775a46;
   color: #e2e8f0;
@@ -229,17 +234,3 @@ button:hover {
 .follow svg {
   font-size: 1.3rem;
 }
-
-/* body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-} */

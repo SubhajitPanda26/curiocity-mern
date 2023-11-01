@@ -1,10 +1,13 @@
-import { Navbar, Nav, Container } from "react-bootstrap";
+import { Navbar, Nav, Container, Badge } from "react-bootstrap";
 import { RiShoppingCartLine, RiUser3Fill } from "react-icons/ri";
 import { LinkContainer } from "react-router-bootstrap";
+import { useSelector } from "react-redux";
 import logo from "../assets/logo/logo.png";
 import "../assets/custom-boot.css";
 
 const Header = () => {
+  const { cartItems } = useSelector((state) => state.cart);
+
   return (
     <header>
       <Navbar
@@ -36,9 +39,23 @@ const Header = () => {
                 <Nav.Link>Contact</Nav.Link>
               </LinkContainer>
               <LinkContainer to="/cart">
-                <Nav.Link style={{ color: "blue" }}>
+                <Nav.Link className="position-relative d-inline-block">
                   <RiShoppingCartLine className="mx-2" />
                   Cart
+                  {cartItems.length > 0 && (
+                    <Badge
+                      bg="warning"
+                      style={{
+                        position: "absolute",
+                        top: "0",
+                        fontSize: "0.7rem",
+                        borderRadius: "50px",
+                        color: "black",
+                      }}
+                    >
+                      {cartItems.reduce((acc, item) => acc + item.qty, 0)}
+                    </Badge>
+                  )}
                 </Nav.Link>
               </LinkContainer>
               <LinkContainer to="/login">
