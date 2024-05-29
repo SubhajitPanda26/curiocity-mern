@@ -6,10 +6,12 @@ import {
   RiDiscordFill,
   RiYoutubeFill,
 } from "react-icons/ri";
+import { useSelector } from "react-redux";
 import pay from "../assets/footer/pay.png";
 
 const Footer = () => {
   const year = new Date().getFullYear();
+  const { userInfo } = useSelector((state) => state.auth);
 
   return (
     <footer>
@@ -19,7 +21,7 @@ const Footer = () => {
           <p>Join Our Mailing List to Stay in the Loop for Everything Curio!</p>
         </div>
         <div className="form">
-          <input type="text" placeholder="Your Email Address" />
+          <input type="email" placeholder="Your Email Address" />
           <button>Subscribe</button>
         </div>
       </section>
@@ -56,7 +58,7 @@ const Footer = () => {
           <Col sm={12} md={6} lg={4} xl={2} className="my-1">
             <h4 className="fw-bold">About</h4>
             <div>
-              <Link to="/">About Us</Link>
+              <Link to="/about">About Us</Link>
             </div>
             <div>
               <Link to="/">Privacy Policy</Link>
@@ -65,7 +67,7 @@ const Footer = () => {
               <Link to="/">Terms & Conditions</Link>
             </div>
             <div>
-              <Link to="/">Contact Us</Link>
+              <Link to="/contact">Contact Us</Link>
             </div>
             <div>
               <Link to="/">Help</Link>
@@ -73,11 +75,9 @@ const Footer = () => {
           </Col>
           <Col sm={12} md={6} lg={4} xl={2} className="my-1">
             <h4 className="fw-bold">My Account</h4>
+            <div>{userInfo ? "" : <Link to="/login">Sign In</Link>}</div>
             <div>
-              <Link to="/">Sign In</Link>
-            </div>
-            <div>
-              <Link to="/">View Cart</Link>
+              <Link to="/cart">View Cart</Link>
             </div>
             <div>
               <Link to="/">My Wishlist</Link>

@@ -1,12 +1,31 @@
-import { Navbar, Nav, Container, Badge } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
+import { Navbar, Nav, Container, Badge, NavDropdown } from "react-bootstrap";
 import { RiShoppingCartLine, RiUser3Fill } from "react-icons/ri";
 import { LinkContainer } from "react-router-bootstrap";
-import { useSelector } from "react-redux";
-import logo from "../assets/logo/logo.png";
+import { useSelector, useDispatch } from "react-redux";
+import logo from "../assets/logo/logo2.png";
 import "../assets/custom-boot.css";
+import { useLogoutMutation } from "../slices/usersApiSlice";
+import { logout } from "../slices/authSlice";
 
 const Header = () => {
   const { cartItems } = useSelector((state) => state.cart);
+  const { userInfo } = useSelector((state) => state.auth);
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const [logoutApiCall] = useLogoutMutation();
+
+  const logoutHandler = async () => {
+    try {
+      await logoutApiCall().unwrap();
+      dispatch(logout());
+      navigate("/login");
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   return (
     <header>
@@ -58,12 +77,35 @@ const Header = () => {
                   )}
                 </Nav.Link>
               </LinkContainer>
-              <LinkContainer to="/login">
-                <Nav.Link>
-                  <RiUser3Fill className="mx-2" />
-                  Sign In
-                </Nav.Link>
-              </LinkContainer>
+              {userInfo && userInfo.isAdmin ? (
+                <NavDropdown title={userInfo.name} id="username">
+                  <NavDropdown.Item href="https://dashboard.stripe.com/test/payments">
+                    Orders
+                  </NavDropdown.Item>
+                  <LinkContainer to="/admin/productlist">
+                    <NavDropdown.Item>Products</NavDropdown.Item>
+                  </LinkContainer>
+                  <LinkContainer to="/admin/userlist">
+                    <NavDropdown.Item>Users</NavDropdown.Item>
+                  </LinkContainer>
+                  <NavDropdown.Item onClick={logoutHandler}>
+                    Logout
+                  </NavDropdown.Item>
+                </NavDropdown>
+              ) : userInfo ? (
+                <NavDropdown title={userInfo.name} id="username">
+                  <NavDropdown.Item onClick={logoutHandler}>
+                    Logout
+                  </NavDropdown.Item>
+                </NavDropdown>
+              ) : (
+                <LinkContainer to="/login">
+                  <Nav.Link href="/login">
+                    <RiUser3Fill className="mx-2" />
+                    Sign In
+                  </Nav.Link>
+                </LinkContainer>
+              )}
             </Nav>
           </Navbar.Collapse>
         </Container>

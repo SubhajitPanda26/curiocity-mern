@@ -31,7 +31,7 @@ const ContactScreen = () => {
               </p>
               <p>
                 <RiMailLine className="me-3" />
-                dummy@gmail.com
+                curiocity@gmail.com
               </p>
               <p>
                 <RiPhoneLine className="me-3" />

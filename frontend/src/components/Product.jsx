@@ -4,7 +4,10 @@ import Rating from "./Rating";
 
 const Product = ({ product }) => {
   return (
-    <Card className="my-3 p-3 rounded shadow hover-scale">
+    <Card
+      className="my-3 p-3 rounded shadow hover-scale"
+      style={{ width: "16rem" }}
+    >
       <Link to={`/product/${product._id}`}>
         <Card.Img height="240px" src={product.image} variant="top" />
       </Link>
